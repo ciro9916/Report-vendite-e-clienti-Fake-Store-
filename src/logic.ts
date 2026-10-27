@@ -65,7 +65,7 @@ export const top_3_prodotti = (carrelli:typeCart[], prodotti:typeProduct[],clien
                 categoria:prodotto.category,
                 prezzo_unitario:prodotto.price,
                 unita:quantita,
-                fatturato:fatturato
+                fatturato:fatturato,
         }
 
         if(max.length<3){
