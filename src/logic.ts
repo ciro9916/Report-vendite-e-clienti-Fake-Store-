@@ -60,12 +60,12 @@ export const top_3_prodotti = (carrelli:typeCart[], prodotti:typeProduct[],clien
         }
 
         const prodottoX:prodottoMaxVenduto = {
-                id:prodotto.id,
-                titolo:prodotto.title,
-                categoria:prodotto.category,
-                prezzo_unitario:prodotto.price,
-                unita:quantita,
-                fatturato:fatturato,
+               id:prodotto.id,
+               titolo:prodotto.title,
+               categoria:prodotto.category,
+               prezzo_unitario:prodotto.price,
+               unita:quantita,
+               fatturato:fatturato,
         }
 
         if(max.length<3){
@@ -141,8 +141,8 @@ export const top_3_clienti = (carrelli:typeCart[], prodotti:typeProduct[],client
 
 const ordinaVettore_utenti = (vettore: clienteMax[]): clienteMax[] => {
     return vettore.sort((a, b) => b.spesa_totale - a.spesa_totale);
-};
+}
 
 const ordinaVettore_prodotti = (vettore: prodottoMaxVenduto[]): prodottoMaxVenduto[] => {
     return vettore.sort((a, b) => b.unita - a.unita);
-};
+}
