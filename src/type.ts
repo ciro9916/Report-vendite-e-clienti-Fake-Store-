@@ -56,3 +56,16 @@ export type typeUser = {
 };
 
 
+export type Report<T> = {
+    report: string                      
+    generato_il: string                 
+    data_riferimento: string | null      
+    all_time: {
+        intervallo: null                 
+        classifica: T[]
+    }
+    ultimo_mese: {
+        intervallo: { inizio: string; fine: string } | null
+        classifica: T[]
+    }
+}

@@ -7,21 +7,18 @@ GET /carts	    Ordini/carrelli: userId, date, elenco { productId, quantity }
 GET /users	    Anagrafica clienti
 */
 
-import type {typeProduct,typeCart,typeUser} from "./type.js"
-import { chiamataApiCart, chiamataApiUser, chiamataApiProduct } from "./api.js";
-import {top_3_clienti,top_3_prodotti} from "./logic.js"
 
-const main = async () =>{
+import { chiamataApiCart, chiamataApiUser, chiamataApiProduct } from "./api.js";
+import { reportProdotti, reportClienti } from "./logic.js"
+
+const main = async () => {
     const prodotti = await chiamataApiProduct();
     const carrelli = await chiamataApiCart();
     const utenti = await chiamataApiUser();
 
-    /*console.log(top_3_clienti(carrelli,prodotti,utenti))
+    console.log(JSON.stringify(reportProdotti(carrelli, prodotti), null, 2))
     console.log("----------------------")
-    console.log(top_3_clienti(carrelli,prodotti,utenti,true))*/
-
-    console.log(top_3_prodotti(carrelli,prodotti,utenti))
-
-    }
+    console.log(JSON.stringify(reportClienti(carrelli, prodotti, utenti), null, 2))
+}
 
 main()
