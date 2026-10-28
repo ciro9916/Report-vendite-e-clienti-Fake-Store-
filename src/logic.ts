@@ -107,13 +107,12 @@ export const top_3_prodotti = (carrelli:typeCart[], prodotti:typeProduct[],perio
                fatturato:fatturato,
         }
 
-        if(max.length<3){
+         if (quantita > 0) {
             max.push(prodottoX)
-            max=ordinaVettore_prodotti(max)
-        }else{
-            max.push(prodottoX)
-            max=ordinaVettore_prodotti(max)
-            max.pop()
+            max = ordinaVettore_prodotti(max)
+            if (max.length > 3) {
+                max.pop()
+            }
         }
     }
     return  max.map((c, i) => ({ rank: i + 1, ...c }))

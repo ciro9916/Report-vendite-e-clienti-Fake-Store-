@@ -11,24 +11,16 @@ export type typeProduct = {
   };
 };
 
+export type typeCartItem = {
+  productId: number;
+  quantity: number;
+};
+
 export type typeCart = {
   id: number;
   userId: number;
   date: string;
-  products: [
-    {
-      productId: number;
-      quantity: number;
-    },
-    {
-      productId: number;
-      quantity: number;
-    },
-    {
-      productId: number;
-      quantity: number;
-    }
-  ];
+  products: typeCartItem[];
   __v: number;
 };
 
